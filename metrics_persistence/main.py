@@ -1,7 +1,5 @@
 import concurrent.futures
 import json
-import logging
-import traceback
 from datetime import datetime
 
 import psycopg2
@@ -10,7 +8,7 @@ from psycopg2 import pool
 from psycopg2.extras import DictCursor
 from psycopg2.sql import SQL
 
-import configs
+from metrics_persistence import configs
 from metrics_persistence import log
 
 HOST = configs.kafka["host"]
