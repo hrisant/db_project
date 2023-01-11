@@ -13,7 +13,6 @@ and leave only the metrics in the metrics table, but it would have a cost at rea
 
 ### Tests:
 - are intended to be run with pytest
-- the code contains very little logic of its own, so there is little to unit test
 
 
 ### Credits:

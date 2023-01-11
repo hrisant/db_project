@@ -8,5 +8,3 @@ psql -h pg-1534cab-indarkwedwell39-82be.aivencloud.com -p 19267 -d defaultdb -U 
 	  regex text ,
 	PRIMARY KEY (logdate, url)
 ) PARTITION BY RANGE (logdate);"
-
-#CREATE TABLE metrics_20230108 PARTITION OF metrics FOR VALUES FROM (DATE '2023-01-08') TO (DATE '2023-01-09');
