@@ -31,7 +31,7 @@ insert_query = """ INSERT INTO metrics (logdate, url, resp_code, resp_time, has_
 
 
 def persist_to_db(data, postgreSQL_pool):
-    log.debug("")
+    log.debug("Writing to db: %s.", data)
     try:
         ps_connection = postgreSQL_pool.getconn()
         record_to_insert = (data["timestamp"], data["url"], data["status_code"],
@@ -42,7 +42,7 @@ def persist_to_db(data, postgreSQL_pool):
             ps_connection.commit()
         postgreSQL_pool.putconn(ps_connection)
     except psycopg2.DatabaseError:
-        log.exception("Error persisting message %s to db", data)
+        log.exception("Error persisting message %s to db.", data)
     finally:
         postgreSQL_pool.putconn(ps_connection)
 
