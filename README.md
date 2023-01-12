@@ -11,6 +11,8 @@ It is thus easy to remove old data and maybe with some query magic to optimize r
 For space efficiency the url and regex fields could have been extracted in a different table,
 and leave only the metrics in the metrics table, but it would have a cost at reading.
 
+It is initialized by running db_initializer.sh and then partitions_crontab.py
+
 ### Tests:
 - are intended to be run with pytest
 
